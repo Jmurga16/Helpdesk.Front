@@ -32,12 +32,16 @@ export class LoginComponent implements OnInit {
     let sNombreUsuario = this.User.value;
     let sContrasenia = this.Password.value;
 
+    this.router.navigate(['/user/list']);
+
+    return;
+
     await this.authService.Login(sNombreUsuario, sContrasenia).subscribe({
       next: (data) => {
 
         if (data[0].result == 1) {
           localStorage.setItem("username", this.User.value)
-          this.router.navigate(['/users/list']);
+          this.router.navigate(['/user/list']);
         }
         //else {
         //  Swal.fire({

@@ -70,3 +70,26 @@ h1.app-name {
     text-decoration: none;
     cursor         : pointer;
 }
+
+.mat-list-item-content {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    box-sizing    : border-box;
+    padding       : 0 0.5rem;
+    position      : relative;
+    height        : inherit;
+}
+
+.clsColorSideNav {
+    background-color: #4e73df;
+
+}
+
+.clsImgLogo {
+    padding-top   : 1rem;
+    padding-bottom: 1rem;
+    width         : 4rem;
+    display       : block;
+    margin        : auto;
+}

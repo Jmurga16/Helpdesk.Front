@@ -6,12 +6,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 const ANGULAR_MATERIAL = [
   MatIconModule,
   MatListModule,
   MatSidenavModule,
   MatToolbarModule,
+  MatButtonModule
 ]
 
 @NgModule({
@@ -22,7 +24,7 @@ const ANGULAR_MATERIAL = [
     CommonModule,
     AdminRoutingModule,
     ANGULAR_MATERIAL
- 
+
   ]
 })
 export class AdminLayoutModule { }

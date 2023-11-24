@@ -12,22 +12,29 @@
 
     <mat-sidenav-container class="menu-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-            fixedTopGap="56">
-            <mat-nav-list>
+            fixedTopGap="56" class="clsColorSideNav">
 
+            <img src="assets/img/logo.png" class="clsImgLogo" />
+
+            <hr class="sidebar-divider">
+
+            <mat-nav-list>
                 <div *ngFor="let nav of ListMenu; let index = index">
                     <mat-list-item (click)="nav.subMenu!=null  ? fnShowSubMenu(index)  : fnRouting(nav.route)"
                         class="parent">
-                        <span class="full-width"  [ngClass]="{active: nav.route == getRouterURL}">{{nav.name}}</span>
-                        <mat-icon mat-list-icon>{{nav.icon}}</mat-icon>
-                        <mat-icon class="menu-button" [ngClass]="{rotated : nav.show}" *ngIf="nav.subMenu!=null">
-                            expand_more
-                        </mat-icon>
+                        <div class="mat-list-item-content" style="color: white;">
+                            <mat-icon mat-list-icon style="padding-right: 1rem; ">{{nav.icon}}</mat-icon>
+                            <span class="full-width" [ngClass]="{active: nav.route == getRouterURL}">{{nav.name}}</span>
+                            <mat-icon class="menu-button" [ngClass]="{rotated : nav.show}" *ngIf="nav.subMenu!=null">
+                                expand_more
+                            </mat-icon>
+                        </div>
+
                     </mat-list-item>
 
                     <div class="submenu" [ngClass]="{expanded : nav.show }" *ngIf="nav.show">
                         <div *ngFor="let sub1 of nav.subMenu">
-                            <div *ngIf="nav.idMenu==sub1.idParent">
+                            <div *ngIf="nav.idMenu == sub1.idParent">
                                 <mat-list-item class="parent">
                                     <span class="full-width">{{sub1.name}}</span>
                                     <mat-icon mat-list-icon>{{sub1.icon}}</mat-icon>
