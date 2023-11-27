@@ -25,6 +25,7 @@ const ANGULAR_MATERIAL = [
     AdminRoutingModule,
     ANGULAR_MATERIAL
 
-  ]
+  ],
+
 })
 export class AdminLayoutModule { }

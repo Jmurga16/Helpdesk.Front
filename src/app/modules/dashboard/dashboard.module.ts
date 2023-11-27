@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserRoutingModule } from './dashboard-routing.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 import { PanelComponent } from './pages/panel/panel.component';
 
 /* const MATERIAL_MODULES = [
@@ -16,7 +16,7 @@ import { PanelComponent } from './pages/panel/panel.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    UserRoutingModule,
+    DashboardRoutingModule,
     //MATERIAL_MODULES
 
 
