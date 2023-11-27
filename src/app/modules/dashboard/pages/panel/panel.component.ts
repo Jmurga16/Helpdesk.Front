@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class PanelComponent {
 
+  title: string = "Dashboard"
 }

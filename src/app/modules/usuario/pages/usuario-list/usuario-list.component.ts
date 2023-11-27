@@ -51,7 +51,8 @@ export class UsuarioListComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   usuarioTemp = [
-    { nombres: 'Jose Perales', correo: 'jose@gmail.com', roles: 'administrador', estado: true }
+    { idUsuario: 1, nombres: 'Jose Perales', correo: 'jose@gmail.com', roles: 'administrador', estado: true },
+    { idUsuario: 2, nombres: 'Franco Martinz', correo: 'franco@gmail.com', roles: 'TI', estado: true }
   ]
 
 
