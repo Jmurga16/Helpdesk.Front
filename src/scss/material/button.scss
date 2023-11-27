@@ -1,0 +1,56 @@
+@media only screen and (min-device-width: 768px) {
+    .fab-container {
+        position      : fixed;
+        top           : 7rem;
+        right         : 5.5rem;
+        z-index       : 101;
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        margin-top    : 5px;
+    }
+
+    .fab-container>div {
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        margin-bottom : 5px;
+    }
+
+    .fab-container>div>button {
+        margin-top: 10px;
+        outline   : none;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .fab-container {
+        position      : fixed;
+        top           : 6rem;
+        right         : 2rem;
+        z-index       : 101;
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        margin-top    : 5px;
+    }
+
+    .fab-container>div {
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        margin-bottom : 5px;
+    }
+
+    .fab-container>div>button {
+        margin-top: 10px;
+        outline   : none;
+    }
+}
+
+@media (min-width: 961px) {
+    .clsButtonAttachment {
+        transform: rotate(270deg);
+    }
+}
+
