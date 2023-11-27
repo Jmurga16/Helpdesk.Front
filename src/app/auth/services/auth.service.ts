@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-    localStorageName = "username"
+    localStorageName = "usuarioname"
     url: string = environment.base_url_api
 
     constructor(
@@ -34,10 +34,10 @@ export class AuthService {
     //#endregion
 
     //#region Obtener Nombre de Usuario
-    get currentUserValue(): boolean {
+    get currentUsuarioValue(): boolean {
         let bValue: boolean = false;
 
-        bValue = localStorage.getItem("username") != null ? true : false
+        bValue = localStorage.getItem("usuarioname") != null ? true : false
 
         return bValue
 

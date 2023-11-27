@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  User = new FormControl();
+  Usuario = new FormControl();
   Password = new FormControl();
 
 
@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
   //#region Login
   async fnLogin() {
 
-    let sNombreUsuario = this.User.value;
+    let sNombreUsuario = this.Usuario.value;
     let sContrasenia = this.Password.value;
 
-    this.router.navigate(['/user/list']);
+    this.router.navigate(['/usuario/list']);
 
     return;
 
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
       next: (data) => {
 
         if (data[0].result == 1) {
-          localStorage.setItem("username", this.User.value)
-          this.router.navigate(['/user/list']);
+          localStorage.setItem("usuarioname", this.Usuario.value)
+          this.router.navigate(['/usuario/list']);
         }
         //else {
         //  Swal.fire({
