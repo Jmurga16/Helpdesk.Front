@@ -50,6 +50,11 @@ export class UsuarioListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  usuarioTemp = [
+    { nombres: 'Jose Perales', correo: 'jose@gmail.com', roles: 'administrador', estado: true }
+  ]
+
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -92,6 +97,10 @@ export class UsuarioListComponent implements OnInit {
 
   //#region Listar Usuarios
   async fnListarUsuarios() {
+
+    this.dataSource = new MatTableDataSource(this.usuarioTemp);
+
+
     let nOpcion: number = 1;
 
     /* await this.usersService.fnServiceGETUser(nOpcion, 0).subscribe({
