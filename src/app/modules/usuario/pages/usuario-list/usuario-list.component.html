@@ -23,7 +23,7 @@
             <mat-form-field style="width: 80%;">
                 <mat-label>Buscar Usuario</mat-label>
                 <input matInput (keyup)="aplicarFiltro($event)" [formControl]="txtFiltro" #input>
-                <button style="outline: none;" *ngIf="txtFiltro.value" mat-button matSuffix mat-icon-button
+                <button style="outline: none;" *ngIf="txtFiltro.value" matSuffix mat-icon-button
                     aria-label="Clear" (click)="limpiarFiltro()">
                     <mat-icon>close</mat-icon>
                 </button>
@@ -59,14 +59,14 @@
                 <ng-container matColumnDef="roles">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="clsColumnaId" id="Rol"> Rol </th>
                     <td mat-cell *matCellDef="let element" class='has_label_on_mobile' data-label='Rol: '>
-                        {{element.roles}} </td>
+                        {{element.rol}} </td>
                 </ng-container>
 
                 <!-- Estado -->
                 <ng-container matColumnDef="estado">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="clsColumnaId" id="Estado"> Estado </th>
                     <td mat-cell *matCellDef="let element" class='has_label_on_mobile' data-label='Estado: '>
-                        {{element.estado? 'Activo':'Inactivo'}} 
+                        {{element.activo? 'Activo':'Inactivo'}} 
                     </td>
                 </ng-container>
 
@@ -78,9 +78,9 @@
                         <div class="example-button-row " *ngIf="element.idUsuario!=1">
                             <button mat-raised-button color="accent" style="margin-right: 8px;"
                                 (click)="goToEditar(element.idUsuario)">Editar</button>
-                            <button *ngIf="element.estado" mat-raised-button color="warn"
+                            <button *ngIf="element.activo" mat-raised-button color="warn"
                                 (click)="fnCambiarEstado(element.idUsuario,0)">Eliminar</button>
-                            <button *ngIf="!element.estado" mat-raised-button class="buttonActive"
+                            <button *ngIf="!element.activo" mat-raised-button class="buttonActive"
                                 (click)="fnCambiarEstado(element.idUsuario,1)">Activar</button>
                         </div>
                     </td>

@@ -9,6 +9,9 @@ import { UsuarioFormComponent } from './pages/usuario-form/usuario-form.componen
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
+import { RolListComponent } from './pages/rol-list/rol-list.component';
+import { RolFormModalComponent } from './pages/rol-form-modal/rol-form-modal.component';
+import { PermisoListComponent } from './pages/permiso-list/permiso-list.component';
 
 
 const MATERIAL_MODULES = [
@@ -21,7 +24,10 @@ const MATERIAL_MODULES = [
 @NgModule({
   declarations: [
     UsuarioListComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    RolListComponent,
+    RolFormModalComponent,
+    PermisoListComponent
   ],
   imports: [
     CommonModule,

@@ -99,12 +99,11 @@ export class UsuarioListComponent implements OnInit {
   //#region Listar Usuarios
   async fnListarUsuarios() {
 
-    this.dataSource = new MatTableDataSource(this.usuarioTemp);
-
-
     let nOpcion: number = 1;
 
-    /* await this.usersService.fnServiceGETUser(nOpcion, 0).subscribe({
+    let pParametro: any = [];
+
+    await this.usuarioService.fnServiceUsuario(nOpcion, pParametro).subscribe({
       next: (data) => {
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
@@ -113,19 +112,19 @@ export class UsuarioListComponent implements OnInit {
       error: (e) => {
         console.log(e);
       }
-    }); */
+    });
 
   }
   //#endregion
 
 
   //#region Eliminar/Activar
-  async fnCambiarEstado(nIdUsuario: number, bEstado: number) {
+  async fnCambiarEstado(IdUsuario: number, Activo: number) {
 
-    let nOpcion = 3
+    let nOpcion = 5
     let sTitulo: string, sRespuesta: string;
 
-    if (bEstado == 1) {
+    if (Activo == 1) {
       sTitulo = '¿Desea activar el usuario?'
       sRespuesta = 'Se activó el usuario con éxito'
     }
@@ -149,10 +148,10 @@ export class UsuarioListComponent implements OnInit {
     }
 
     let pParametro = [];
-    pParametro.push(nIdUsuario);
-    pParametro.push(bEstado);
+    pParametro.push(IdUsuario);
+    pParametro.push(Activo);
 
-    /* await this.usuarioService.fnServicePostUser(nOpcion, pParametro).subscribe({
+    await this.usuarioService.fnServicePostUser(nOpcion, pParametro).subscribe({
       next: (value: any) => {
 
         if (value.cod == 1) {
@@ -168,7 +167,7 @@ export class UsuarioListComponent implements OnInit {
       error: (e) => {
         console.error(e);
       }
-    }); */
+    });
 
   }
   //#endregion Eliminar
